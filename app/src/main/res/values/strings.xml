@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">my basketball</string>
     <string name="account_hint">请输入用户名</string>
     <string name="passwd_hint">请输入密码</string>
     <string name="remember_passwd">记住密码</string>
