@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5DBEF5"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context="com.hxzy.login.Login_2">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/ic_topbarback" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_login_panel_bg"
+        android:layout_marginTop="156dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="用户名"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColorHint="#8ECBF6"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv1"
+            android:background="#8ECBF6" />
+
+        <EditText
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColorHint="#8ECBF6"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv2"
+            android:background="#8ECBF6" />
+
+        <EditText
+            android:id="@+id/tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColorHint="#8ECBF6"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv3"
+            android:background="#8ECBF6" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="验证码"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:textColorHint="#8ECBF6"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_blue_btn_bg"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="注册"
+        android:textColor="#FCFDFF"
+        android:textSize="22sp" />
+
+    <CheckBox
+        android:id="@+id/tb4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn"
+        android:layout_marginTop="126dp"
+        android:layout_marginBottom="50dp"
+        android:drawablePadding="6dp"
+        android:text="@string/sure"
+        android:textColor="#FCFDFF"
+        android:textSize="20sp" />
+
+</RelativeLayout>
