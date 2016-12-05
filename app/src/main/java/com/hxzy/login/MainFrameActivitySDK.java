@@ -1,12 +1,17 @@
 package com.hxzy.login;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
+import com.sam.utils.system.SystemBarTintManager;
 import com.sam.widget.nav_bar.NavigationBar;
 
 import fragment.DiscoveryFragment;
@@ -23,6 +28,12 @@ public class MainFrameActivitySDK extends FragmentActivity {;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            tintManager.setStatusBarTintResource(R.color.black);//通知栏所需颜色
+        }
         setContentView(R.layout.activity_main_frame_sdk);
 
         NavigationBar navigationBar = (NavigationBar) findViewById(R.id.nav_bar);
@@ -49,5 +60,18 @@ public class MainFrameActivitySDK extends FragmentActivity {;
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content,fragment);
         fragmentTransaction.commit();
+    }
+
+    @TargetApi(19)
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
     }
 }
